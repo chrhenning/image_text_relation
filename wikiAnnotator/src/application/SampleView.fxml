@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+	<center>
+       <BorderPane prefHeight="200.0" prefWidth="200.0">
+          <center>
+             <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+               <tabs>
+                 <Tab text="Sample">
+                      <content>
+                         <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <center>
+                               <SplitPane dividerPositions="0.7495826377295493" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <items>
+                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                        <children>
+                                          <TabPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <tabs>
+                                                <Tab closable="false" text="Text">
+                                                   <content>
+                                                       <ScrollPane fitToHeight="true" fitToWidth="true" onScroll="#handleScroll">
+                                                         <content>
+                                                            <WebView fx:id="textView" onScroll="#handleScroll" onScrollFinished="#handleScroll" onScrollStarted="#handleScroll" prefHeight="200.0" prefWidth="200.0" />
+                                                         </content>
+                                                       </ScrollPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab closable="false" text="Additional Infos">
+                                                   <content>
+                                                      <HBox spacing="10.0">
+                                                         <padding>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Label text="Key Phrases:">
+                                                                     <font>
+                                                                        <Font size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <ListView fx:id="listKeyphrases" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox fx:id="listsVBox" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Label text="List Items:">
+                                                                     <font>
+                                                                        <Font size="16.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </content>
+                                                </Tab>
+                                             </tabs>
+                                          </TabPane>
+                                        </children>
+                                     </AnchorPane>
+                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Pagination fx:id="imgPagination" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                     </AnchorPane>
+                                 </items>
+                               </SplitPane>
+                            </center>
+                           <left>
+                              <TreeView fx:id="sectionList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <top>
+                              <Label fx:id="articleTitle" text="Title" textFill="#16054f" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                         </BorderPane>
+                      </content>
+                 </Tab>
+                 <Tab text="Website">
+                   <content>
+                         <BorderPane>
+                            <center>
+                               <WebView fx:id="wikiPageView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                            </center>
+                         </BorderPane>
+                   </content>
+                 </Tab>
+               </tabs>
+             </TabPane>
+          </center>
+       </BorderPane>
+    </center>
+    <bottom>
+       <BorderPane fx:id="annotationView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+          <center>
+             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                <children>
+                   <BorderPane prefHeight="200.0" prefWidth="200.0">
+                      <left>
+                         <Label text="Mutual Information of Text and Image" BorderPane.alignment="CENTER">
+                            <font>
+                               <Font name="SansSerif Regular" size="20.0" />
+                            </font>
+                         </Label>
+                      </left>
+                      <padding>
+                         <Insets left="10.0" />
+                      </padding>
+                     <center>
+                        <HBox fx:id="radioBtnsHBoxMI" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </center>
+                   </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Label text="Semantic Correlation of Text and Image" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="SansSerif Regular" size="20.0" />
+                           </font>
+                        </Label>
+                     </left>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <center>
+                        <HBox fx:id="radioBtnsHBoxSC" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Label text="Add marked text snippets, which are highly correlated to the image." BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="SansSerif Regular" size="20.0" />
+                           </font>
+                        </Label>
+                     </left>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <center>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <ComboBox fx:id="markedTextCB" prefWidth="150.0" />
+                              <Button fx:id="addBtn" mnemonicParsing="false" onAction="#handle" text="Add" />
+                              <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#handle" text="Remove" />
+                           </children>
+                        </HBox>
+                     </center>
+                  </BorderPane>
+                  <CheckBox fx:id="checkboxValid" mnemonicParsing="false" onAction="#handle" text="Extracted sample pair (image, text) not valid">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </CheckBox>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <left>
+                        <Label text="Specify type of image:" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="SansSerif Regular" size="20.0" />
+                           </font>
+                        </Label>
+                     </left>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <center>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <ComboBox fx:id="imageTypeCB" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                     </center>
+                  </BorderPane>
+                  <Label fx:id="annoTitle" text="Annotation" />
+                </children>
+             </VBox>
+          </center>
+         <top>
+            <Label text="Annotate Image:" BorderPane.alignment="CENTER_LEFT">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </top>
+       </BorderPane>
+    </bottom>
+</fx:root>

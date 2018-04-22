@@ -1,0 +1,1 @@
+The BBC dataset are downloaded from BBC News website ( http://news.bbc.co.uk) and contains 3361 entries, 240 (part1) of which are for testing, and the rest (part2) for training and developing. Each entry is composed of a news document, a news image and its caption. The *.html, *.jpg, and *.txt files correspond to documents, images and captions, respectively. 

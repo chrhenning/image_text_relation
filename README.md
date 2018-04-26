@@ -1,16 +1,18 @@
 # Estimating the Information Gap between Textual and Graphical Representations
 Investigating the discrepency of knowledge transfer conveyed by graphical resp. textual representations by using deep learning methods.
 
-This repository comprises the implementations enclosed to the Master thesis of Christian Henning with the title:
+This repository comprises the implementations enclosed to my Master thesis with the title:
 
 **Estimating the Information Gap between Textual and Graphical Representations**
 *(submitted on January 6th, 2017)*
 
-Note, the labeling scheme has been changed for CMI (Cross-modal Mutual Information) since the submission of the thesis. See below.
+The thesis is part of the repository and can be seen as detailed documentation.
+
+Note, the labeling scheme has been changed for CMI (Cross-modal Mutual Information) since the submission of the thesis. See below for details.
 
 More precisely, the repository comprises implementations for the *SimpleWiki* dataset retrieval, the *bbcAnnotator* and *wikiAnnotator* as well as the Tensorflow implementations of the designed deep neural networks and their evaluation scripts.
 
-To retrieve a copy of the master thesis, please contact <henningc@ethz.ch>. The two publications that emerged from this thesis are cited below.
+For more information or a detailed annotation guide, please contact <henningc@ethz.ch>. The two publications that emerged from this thesis (and make use of the same implementation) are cited below.
 
 ## Simplification of the annotation scheme
 

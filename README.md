@@ -20,6 +20,8 @@ As described in section 4.2.3.1. of the thesis, the provided annotation scheme h
 
 Therefore, the current implementation uses a simplified CMI annotation scheme. Label 1, 6 and 7 have been omitted. The remaining labels have been subject to a permutation, such that the MI classification problem can also be considered as a regression problem. Refer to the following table for details:
 
+|  |  |  |  |  |  |
+| :--- | :---: | :---: | :---: | :---: | :---: |
 | *Originl Label*   | 0 | 5 | 4 | 3 | 2 |
 | *New Label*       | 0 | 1 | 2 | 3 | 4 |
 
